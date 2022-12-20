@@ -684,6 +684,7 @@ func (m *module) makeGlobalDict() StringDict {
 	return r
 }
 
+func (fn *Function) Defaults() Tuple       { return fn.defaults }
 func (fn *Function) Name() string          { return fn.funcode.Name } // "lambda" for anonymous functions
 func (fn *Function) Doc() string           { return fn.funcode.Doc }
 func (fn *Function) Hash() (uint32, error) { return hashString(fn.funcode.Name), nil }
